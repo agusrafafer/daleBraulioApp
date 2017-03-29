@@ -1,0 +1,39 @@
+<ion-view title="Filtros" id="page9">
+    <ion-nav-bar class="bar-stable">
+        <!--<ion-nav-back-button></ion-nav-back-button>-->
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-android-close" ng-click="cancelarFiltro()"></button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-android-done" ng-click="aplicarFiltro()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content padding="true" class="has-header fondo-gris">
+        <ion-list>
+            <ion-item class="item-icon-left item-icon-right" ng-click="buscarFiltrosDisponibles('ubicacion')">
+                <i class="icon ion-android-pin"></i>
+                <h2>Ubicaci&oacute;n: {{getFiltros().provincia === -1 ? 'Todas' : getFiltros().provincia.nombre}}</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ng-click="buscarFiltrosDisponibles('empresa')">
+                <i class="icon ion-ribbon-b"></i>
+                <h2>Empresa: {{getFiltros().empresa === -1 ? 'Todas' : getFiltros().empresa.nombreFantasia}}</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right" ng-click="buscarFiltrosDisponibles('rubro')">
+                <i class="icon ion-filing"></i>
+                <h2>Rubro: {{getFiltros().rubro === -1 ? 'Todos' : getFiltros().rubro.nombre}}</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon ion-cash"></i>
+                Precio: 
+                <rzslider rz-slider-model="sliderPrecioFiltro.minValue"
+                          rz-slider-high="sliderPrecioFiltro.maxValue"
+                          rz-slider-options="sliderPrecioFiltro.options"
+                          style="width: 95%"></rzslider>
+                <i class="icon"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

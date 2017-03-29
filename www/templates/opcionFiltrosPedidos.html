@@ -1,0 +1,59 @@
+<ion-view title="Pedidos {{getPedidoFactory().filtros.opcion}}" id="page11">
+     <ion-nav-bar class="bar-stable">
+         <!--<ion-nav-back-button></ion-nav-back-button>-->
+         <ion-nav-buttons side="left">
+             <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+         </ion-nav-buttons>
+         <ion-nav-buttons side="right">
+             <button class="button button-icon button-clear ion-android-done" ng-click="aplicarFiltroPedidos()"></button>
+         </ion-nav-buttons>
+     </ion-nav-bar>
+    <ion-content padding="true" class="has-header fondo-gris">
+        <ion-list>
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon"></i>
+                <h2><a id="daleBraulio-button3" 
+                       class="button button-positive  button-block"
+                       ng-click="openDPFechaDesdeFiltroPed()"
+                       >Fecha Desde: {{getPedidoFactory().filtros.fechaDesde === - 1? 'Seleccionar' : (getPedidoFactory().filtros.fechaDesde | date:'dd/MM/yyyy')}}</a></h2>
+                <i class="icon"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon"></i>
+                <h2><a id="daleBraulio-button3" 
+                       class="button button-positive  button-block"
+                       ng-click="openDPFechaHastaFiltroPed()"
+                       >Fecha Hasta: {{getPedidoFactory().filtros.fechaHasta === - 1? 'Seleccionar' : (getPedidoFactory().filtros.fechaHasta | date:'dd/MM/yyyy')}}</a></h2>
+                <i class="icon"></i>
+            </ion-item>
+            <ion-item class="item-icon-left item-icon-right">
+                <i class="icon"></i>
+                <a id="daleBraulio-button3" 
+                       class="button button-positive  button-block"
+                       ng-click="abrirModalSeleccionSucursal()"
+                       >Sucursal: {{getPedidoFactory().filtros.sucursal === ''?'Seleccionar':(getPedidoFactory().filtros.sucursal.calle.toString().concat(' ').concat(getPedidoFactory().filtros.sucursal.numeroCalle.toString().concat(' Bº ').concat(getPedidoFactory().filtros.sucursal.barrio.toString())))}}</a>
+                <i class="icon"></i>
+            </ion-item>
+        </ion-list>
+
+
+        <script id="modalSeleccionSucursal.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar>
+                <h1 class="title">Seleccione una Sucursal</h1>
+                <button class="button icon icon-left ion-ios-close-outline"
+                            ng-click="cerrarModalSeleccionSucursal()"></button>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list id="sucursales-list">
+                    <ion-item class="item-icon-right" 
+                              ng-repeat="suc in getPedidoFactory().filtros.itemsSucursales"
+                              ng-click="seleccionarSucursal($index)">
+                                {{suc.calle}} {{suc.numeroCalle}} Bº {{suc.barrio}}  
+                    </ion-item>
+            </ion-content>
+        </ion-modal-view>
+        </script>
+
+    </ion-content>
+</ion-view>

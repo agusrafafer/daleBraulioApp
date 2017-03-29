@@ -1,0 +1,36 @@
+<ion-view title="Publicacion" id="page6">
+  <ion-content padding="true" class="has-header fondo-gris">
+    <h3 id="publicacion-heading2" style="color:#000000;">{{getProductoFactory().seleccionado.nombre}}</h3>
+    <div id="publicacion-markdown4">
+      <p style="color:#000000;font-size:20px;">
+        <strong>$ {{getProductoFactory().seleccionado.precio}} x {{getProductoFactory().seleccionado.idUnidadMedida.nombre}}</strong>
+      </p>
+    </div>
+    <p>
+      Empresa: {{getProductoFactory().seleccionado.idEmpresa.razonSocial}}
+    </p>
+    <div>
+        <img style="width: 100%; height: auto; margin: 0px; /*line-height: 250px;*/ text-align: center; background-color: rgb(232, 235, 239); border-radius: 5px;" 
+            ng-src="{{getImagenProducto(getProductoFactory().seleccionado.foto1, getProductoFactory().seleccionado.idEmpresa.idEmpresa)}}">
+        <!--<i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;">
+            
+            
+        </i>-->
+    </div>
+    <button id="publicacion-button21" class="button button-positive  button-block" ng-show="isLogueado()" ng-click="solicitarCantProd(-1)">Pedir</button>
+    <ion-list id="publicacion-list6">
+      <ion-item class="item-icon-left item-icon-right" id="publicacion-list-item23" ng-click="verMasProductosEmpresa()">
+        <i class="icon ion-plus"></i>Más Productos/Servicios
+        <i class="icon ion-android-arrow-forward"></i>
+      </ion-item>
+        <ion-item class="item-icon-left item-icon-right" id="publicacion-list-item17" ng-click="mostrarDescripcion()">
+        <i class="icon ion-ios-paper"></i>Descripción
+        <i class="icon ion-android-arrow-forward"></i>
+      </ion-item>
+      <ion-item class="item-icon-left item-icon-right" id="publicacion-list-item18" ui-sref="menu.ubicacion">
+        <i class="icon ion-location"></i>Mapa
+        <i class="icon ion-android-arrow-forward"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

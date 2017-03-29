@@ -1,0 +1,25 @@
+<ion-view title="Login" id="page1" >
+    <ion-content padding="true" class="has-header fondo-gris">
+        <form name="loginForm" id="loginForm" class="list" novalidate="">
+            <label class="item item-input" id="login-input1" name="txtUsuario">
+                <span class="input-label">Usuario:</span>
+                <input type="text" placeholder="Nombre de usuario"  
+                       ng-model="usuario.login" required>
+            </label>
+            <div class="spacer" style="height: 10px;"></div>
+            <label class="item item-input" id="login-input4" name="txtClave">
+                <span class="input-label">Clave:</span>
+                <input type="password" placeholder=""
+                       ng-model="usuario.clave" required>
+            </label>
+            <button id="login-button1" 
+                    class="button button-energized button-block"
+                    ng-click="login(usuario.login, usuario.clave)"
+                    ng-disabled="loginForm.$invalid"
+                    >Ingresar</button>
+        </form>
+
+        <!--<button id="login-button2" class="button button-positive  button-block button-clear icon ion-android-warning">Olvide mi clave</button>-->
+        <a ui-sref="menu.registro" id="login-button20" class="button button-energized button-block button-clear" style="color: #387ef5!important;">¿Eres Nuevo? Regístrate</a>
+    </ion-content>
+</ion-view>

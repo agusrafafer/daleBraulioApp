@@ -1,0 +1,44 @@
+<ion-view title="Pedidos" id="page12">
+    <!--<ion-nav-bar class="bar-stable">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-android-options" ng-click="verFiltrosDisponibles()"></button>
+        </ion-nav-buttons>
+    </ion-nav-bar>-->
+    <ion-content padding="true" class="has-header fondo-gris">
+        <ion-list id="resultados-list3">
+            <ion-item class="item-icon-right" 
+                      ng-repeat="pedido in getPedidoFactory().filtros.itemsPedidos">
+                <div style="padding: 5px;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;" class="{{pedido.pedidoXestadoPedidoCollection[0].estadoPedido.nombre === 'PENDIENTE'?'error':pedido.pedidoXestadoPedidoCollection[0].estadoPedido.nombre === 'CONFIRMADO'?'success':'warning'}}">
+                    <h2>Cod.: {{pedido.idPedido}}</h2>
+                    <p style="white-space:normal;">Fecha: {{(pedido.fecha| date:'dd/MM/yyyy')}}</p>
+                    <p style="white-space:normal;">Monto: ${{pedido.monto}}</p>
+                    <p style="white-space:normal;">Estado: <span class="label {{pedido.pedidoXestadoPedidoCollection[0].estadoPedido.nombre === 'PENDIENTE'?'label-important':pedido.pedidoXestadoPedidoCollection[0].estadoPedido.nombre === 'CONFIRMADO'?'label-success':'label-warning'}}">{{pedido.pedidoXestadoPedidoCollection[0].estadoPedido.nombre}}</span></p>
+                    <ion-option-button class="button-energized" ng-click="abrirModalVerDetallePedido($index)">Detalle</ion-option-button>
+                </div>
+            </ion-item>
+            <ion-item class="item-thumbnail-left item-icon-right" ng-show="getPedidoFactory().filtros.itemsPedidos.length <= 0">
+                <h2><strong style="color: #ff3333">No hay resultados disponibles</strong></h2>
+            </ion-item>
+        </ion-list>
+
+        <script id="modalVerDetallePedido.html" type="text/ng-template">
+            <ion-modal-view>
+            <ion-header-bar>
+            <h1 class="title">Detalles Pedido Cod. {{codIdPedidoSel}}</h1>
+            <button class="button icon icon-left ion-ios-close-outline"
+            ng-click="cerrarModalVerDetallePedido()"></button>
+            </ion-header-bar>
+            <ion-content>
+            <ion-list id="sucursales-list">
+            <ion-item class="item-icon-right" 
+            ng-repeat="det in detallesPedido">
+            <b>Producto:</b> {{det.idProducto.nombre}} <br/>
+            <b>Cant.:</b> {{det.cantidad}} x {{det.idProducto.idUnidadMedida.nombre}}<br/>
+            <b>Subtotal:</b> {{det.subtotal}}  
+            </ion-item>
+            </ion-content>
+            </ion-modal-view>
+        </script>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,42 @@
+<ion-view title="Filtros" id="page10">
+    <ion-content padding="true" class="has-header fondo-gris">
+        <ion-list ng-repeat="filtro in getFiltros().items">
+            <ion-item class="item-icon-right" 
+                      ng-click="elegirFiltro(-1, 'ubicacion')"
+                      ng-if="filtro.provincia !== undefined && $index === 0">
+                <h2>TOD@S</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" 
+                      ng-click="elegirFiltro($index, 'ubicacion')"
+                      ng-if="filtro.provincia !== undefined">
+                <h2 ng-if="filtro.provincia !== undefined">{{filtro.provincia.nombre}} ({{filtro.cantidadApariciones}})</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" 
+                      ng-click="elegirFiltro(-1, 'empresa')"
+                      ng-if="filtro.empresa !== undefined && $index === 0">
+                <h2>TOD@S</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" 
+                      ng-click="elegirFiltro($index, 'empresa')"
+                      ng-if="filtro.empresa !== undefined">
+                <h2 ng-if="filtro.empresa !== undefined">{{filtro.empresa.nombreFantasia}} ({{filtro.cantidadApariciones}})</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" 
+                      ng-click="elegirFiltro(-1, 'rubro')"
+                      ng-if="filtro.rubro !== undefined && $index === 0">
+                <h2>TOD@S</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+            <ion-item class="item-icon-right" 
+                      ng-click="elegirFiltro($index, 'rubro')"
+                      ng-if="filtro.rubro !== undefined">
+                <h2 ng-if="filtro.rubro !== undefined">{{filtro.rubro.nombre}} ({{filtro.cantidadApariciones}})</h2>
+                <i class="icon ion-android-arrow-forward"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

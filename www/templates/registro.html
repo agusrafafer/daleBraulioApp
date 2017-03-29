@@ -1,0 +1,36 @@
+<ion-view title="Registro" id="page3">
+    <ion-content padding="true" class="has-header fondo-gris">
+        <form name="registroForm" class="list" novalidate="">
+            <label class="item item-input" id="registro-input5" name="txtCuit">
+                <span class="input-label">CUIT:</span>
+                <input type="text" ui-mask="99-99999999-9" ng-model="usuario.cuit" ng-blur="validarCuit(usuario.cuit)" required>
+            </label>
+            <div class="spacer" style="height: 10px;"></div>
+            <label class="item item-input" id="registro-input8" name="txtRazon">
+                <span class="input-label">Razón Social:</span>
+                <input type="text" placeholder="" readonly ng-model="usuario.razonSoc" required>
+            </label>
+            <div class="spacer" style="height: 10px;"></div>
+            <label class="item item-input" id="registro-input10" name="txtEmail">
+                <span class="input-label">E-mail:</span>
+                <input type="email" placeholder="usuario@correo.com" ng-model="usuario.mailLogin" required>
+            </label>
+            <div class="spacer" style="height: 10px;"></div>
+            <label class="item item-input" id="registro-input11" name="txtClave">
+                <span class="input-label">Clave:</span>
+                <input type="password" placeholder="" ng-model="usuario.clave" required>
+            </label>
+            <label class="item item-input" id="registro-input12" name="txtConfirmClave">
+                <span class="input-label">Confirmar Clave:</span>
+                <input type="password" placeholder="" ng-model="usuario.confirmClave" required>
+            </label>
+
+            <div id="registro-button-bar2" class="button-bar">
+                <button id="registro-button15" 
+                        class="button button-energized  button-block" 
+                        ng-disabled="registroForm.$invalid"
+                        ng-click="registrar(usuario.razonSoc, usuario.cuit, usuario.clave, usuario.confirmClave, usuario.mailLogin)">Aceptar</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

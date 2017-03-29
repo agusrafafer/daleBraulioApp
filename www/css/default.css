@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-dic-2016, 15:30:37
+    Author     : agustin
+*/
+
+.label {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.label, .badge {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #999;
+}
+
+.label-success, .badge-success {
+    background-color: #468847;
+}
+
+.label-warning, .badge-warning {
+    background-color: #f89406;
+}
+
+.label-important, .badge-important {
+    background-color: #b94a48;
+}
+
+.error {
+    background-color: #ebcccc;
+}
+
+.success {
+    background-color: #d0e9c6;
+}
+
+.warning {
+    background-color: #faf2cc;
+}
+
+.bar {
+    background-color: #f6db85!important;
+}
+
+.fondo-gris {
+    background-color: #F5F5F5!important;
+}
+
+.button-positive {
+    background-color: #85b5f6!important;
+}
+
+.ionic_datepicker_popup .popup-buttons button {
+    background-color: #85b5f6!important;
+}
+
+.ionic_datepicker_popup .popup-body .selected_date_full {
+    background-color: #85b5f6!important;
+}
+
+.ionic_datepicker_popup .selected_date {
+    background-color: #85b5f6!important;
+}
+
+.ionic_datepicker_popup .today {
+    border: 1px solid #85b5f6!important;
+    border-radius: 50%!important;
+}
+
+.ionic_datepicker_popup .popup-body .button-clear {
+    color: #85b5f6!important;
+}
+
+.ionic_datepicker_popup .popup-body .month_select, .ionic_datepicker_popup .popup-body .year_select {
+    border: none!important;
+    border-bottom: 1px solid #85b5f6!important;
+    padding: 0!important;
+}
+
+.ionic_datepicker_popup .popup-body .month_select:after, .ionic_datepicker_popup .popup-body .year_select:after {
+    right: 5px!important;
+    color: #85b5f6!important;
+}
