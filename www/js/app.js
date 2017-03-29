@@ -11,8 +11,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
 
         })
         .config(['$httpProvider', function($httpProvider) {
-                // ...www.worklife.com.ar
-
                 // delete header from client:
                 // http://stackoverflow.com/questions/17289195/angularjs-post-data-to-external-rest-api
                 $httpProvider.defaults.useXDomain = true;
